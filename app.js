@@ -10,7 +10,7 @@ require('dotenv').config();
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
-
+console.log('yayyyy!');
 app.get('/', async (req, res) => {
   const notes = await Note.find().sort('-createdAt');
   res.render('index', { notes: notes });
